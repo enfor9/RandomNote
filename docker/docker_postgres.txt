@@ -1,0 +1,31 @@
+#get postgres image
+docker pull postgres
+
+#confirm images
+docker images
+
+#running container in first time
+docker run -d --name postgres -e POSTGRES_PASSWORD=test -p 5432:5432 postgres
+#run container in second time
+docker run postgres
+
+#confirm procee
+docker ps
+
+#go to container
+docker exec -ti postgres bash
+
+#login to postgresql in container
+psql -U postgres
+
+# logout from postgresql
+\q
+
+#get out docker
+exit
+
+#stop container
+docker stop postgres
+
+#stop container
+docker ps
